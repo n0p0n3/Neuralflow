@@ -1,10 +1,10 @@
-# PocketFlow C++
+# NeuralFlow
 
 A minimalist LLM framework, ported from Python to C++.
 
 ## Overview
 
-PocketFlow C++ is a port of the original [Python PocketFlow](https://github.com/The-Pocket/PocketFlow). It provides a lightweight, flexible system for building and executing workflows through a simple node-based architecture using modern C++.
+NeuralFlow is a port of the original [Python PocketFlow](https://github.com/The-Pocket/PocketFlow). It provides a lightweight, flexible system for building and executing workflows through a simple node-based architecture using modern C++.
 
 > **Note:** This is an initial implementation ported from the Python version. It currently only supports synchronous operations. Community contributions are welcome to enhance and maintain this project, particularly in adding asynchronous capabilities and comprehensive testing.
 
@@ -17,7 +17,7 @@ PocketFlow C++ is a port of the original [Python PocketFlow](https://github.com/
 *   **Configurable Nodes:** Pass parameters to nodes using a `Params` map (also `std::map<std::string, std::any>`).
 *   **Retry Logic:** Built-in optional retry mechanism for `Node` operations.
 *   **Batch Processing:** Includes `BatchNode` and `BatchFlow` for processing lists of items or parameter sets.
-*   **Header-Only:** The core library is provided in `PocketFlow.h` for easy integration.
+*   **Header-Only:** The core library is provided in `NeuralFlow.h` for easy integration.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ PocketFlow C++ is a port of the original [Python PocketFlow](https://github.com/
 
 ## Building
 
-The library itself is header-only (`PocketFlow.h`). To build the example provided (`main.cpp`):
+The library itself is header-only (`NeuralFlow.h`). To build the example provided (`main.cpp`):
 
 1.  Ensure you have CMake and a C++17 compiler installed.
 2.  Create a build directory:
@@ -44,9 +44,9 @@ The library itself is header-only (`PocketFlow.h`). To build the example provide
     # Or use make, ninja, etc. depending on your generator
     # make
     ```
-5.  The example executable (e.g., `pocketflow_example`) will be inside the `build` directory.
+5.  The example executable (e.g., `neuralflow_example`) will be inside the `build` directory.
     ```bash
-    ./pocketflow_example
+    ./neuralflow_example
     ```
 
 ## Usage
@@ -54,7 +54,7 @@ The library itself is header-only (`PocketFlow.h`). To build the example provide
 Here's a simple example demonstrating how to define and run a workflow:
 
 ```cpp
-#include "pocketflow.h" // Include the library header
+#include "neuralflow.h" // Include the library header
 #include <iostream>
 #include <string>
 #include <vector>
@@ -62,7 +62,7 @@ Here's a simple example demonstrating how to define and run a workflow:
 #include <memory> // For std::make_shared
 
 // Use the namespace
-using namespace pocketflow;
+using namespace neuralfow;
 
 // --- Define Custom Nodes ---
 
@@ -168,7 +168,7 @@ ctest # Run tests
 
 Contributions are highly welcome! We are particularly looking for help with:
 
-1.  **Asynchronous Operations:** Implementing non-blocking node execution (e.g., using `std::async`, `std::thread`, futures, or an external async library).
+1.  **Asynchronous Operations:** Implemented via opennacc/openmp pragmas
 2.  **Testing:** Adding comprehensive unit and integration tests using a framework like GoogleTest.
 3.  **Documentation:** Improving explanations, adding more examples, and documenting edge cases.
 4.  **Error Handling:** Refining exception types and context propagation for errors.
