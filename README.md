@@ -6,8 +6,6 @@ A minimalist LLM framework, ported from Python to C++.
 
 NeuralFlow is a port of the original [Python PocketFlow](https://github.com/The-Pocket/PocketFlow). It provides a lightweight, flexible system for building and executing workflows through a simple node-based architecture using modern C++.
 
-> **Note:** This is an initial implementation ported from the Python version. It currently only supports synchronous operations. Community contributions are welcome to enhance and maintain this project, particularly in comprehensive testing.
-
 ## Features
 
 *   **Node-Based Architecture:** Define workflows by connecting distinct processing units (nodes).
@@ -15,8 +13,7 @@ NeuralFlow is a port of the original [Python PocketFlow](https://github.com/The-
 *   **Synchronous Execution:** Simple, predictable execution flow (async is handled via openacc/openmp pragmas).
 *   **Context Propagation:** Share data between nodes using a `Context` map (`std::map<std::string, std::any>`).
 *   **Configurable Nodes:** Pass parameters to nodes using a `Params` map (also `std::map<std::string, std::any>`).
-*   **Retry Logic:** Built-in optional retry mechanism for `Node` operations.
-*   **Batch Processing:** Includes `BatchNode` and `BatchFlow` for processing lists of items or parameter sets.
+*   **Batch Processing:** Includes `BatchNode` and `BatchFlow` subclasses for processing lists of items or parameter sets.
 *   **Header-Only:** The core library is provided in `NeuralFlow.h` for easy integration.
 
 ## Requirements
