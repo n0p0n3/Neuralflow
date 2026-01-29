@@ -1,0 +1,6 @@
+subclass synchronous batch node for inference layer
+subclass the inference layer per function
+fetch pykan kanpiler
+...
+...
+rewrite inference layer to use dawn webgpu wgsl compute shader
