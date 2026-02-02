@@ -1,10 +1,12 @@
-# NeuralFlow
+# CognitoFlow
+
+"If I think, Am I?"
 
 A minimalist LLM framework, ported from Python to C++.
 
 ## Overview
 
-NeuralFlow is a port of the original [Python PocketFlow](https://github.com/The-Pocket/PocketFlow). It provides a lightweight, flexible system for building and executing workflows through a simple node-based architecture using modern C++.
+CognitoFlow is a port of the original [Python PocketFlow](https://github.com/The-Pocket/PocketFlow). It provides a lightweight, flexible system for building and executing workflows through a simple node-based architecture using modern C++.
 
 ## Features
 
@@ -14,7 +16,7 @@ NeuralFlow is a port of the original [Python PocketFlow](https://github.com/The-
 *   **Context Propagation:** Share data between nodes using a `Context` map (`std::map<std::string, std::any>`).
 *   **Configurable Nodes:** Pass parameters to nodes using a `Params` map (also `std::map<std::string, std::any>`).
 *   **Batch Processing:** Includes `BatchNode` and `BatchFlow` subclasses for processing lists of items or parameter sets.
-*   **Header-Only:** The core library is provided in `NeuralFlow.h` for easy integration.
+*   **Header-Only:** The core library is provided in `CognitoFlow.h` for easy integration.
 
 ## Requirements
 
@@ -23,7 +25,7 @@ NeuralFlow is a port of the original [Python PocketFlow](https://github.com/The-
 
 ## Building
 
-The library itself is header-only (`NeuralFlow.h`). To build the example provided (`main.cpp`):
+The library itself is header-only (`CognitoFlow.h`). To build the example provided (`main.cpp`):
 
 1.  Ensure you have CMake and a C++17 compiler installed.
 2.  Create a build directory:
@@ -41,9 +43,9 @@ The library itself is header-only (`NeuralFlow.h`). To build the example provide
     # Or use make, ninja, etc. depending on your generator
     # make
     ```
-5.  The example executable (e.g., `neuralflow_example`) will be inside the `build` directory.
+5.  The example executable (e.g., `cognitoflow_example`) will be inside the `build` directory.
     ```bash
-    ./neuralflow_example
+    ./cognitoflow_example
     ```
 
 ## Usage
@@ -51,7 +53,7 @@ The library itself is header-only (`NeuralFlow.h`). To build the example provide
 Here's a simple example demonstrating how to define and run a workflow:
 
 ```cpp
-#include "neuralflow.h" // Include the library header
+#include "cognitoflow.h" // Include the library header
 #include <iostream>
 #include <string>
 #include <vector>
@@ -59,7 +61,7 @@ Here's a simple example demonstrating how to define and run a workflow:
 #include <memory> // For std::make_shared
 
 // Use the namespace
-using namespace neuralfow;
+using namespace cognitoflow;
 
 // --- Define Custom Nodes ---
 
